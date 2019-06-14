@@ -7,9 +7,9 @@
     display: flex;
     flex-wrap: nowrap;
     @media(max-width: 768px) {
-      flex-wrap: wrap;
+      flex-wrap: wrap !important;
       .col-25, .col-50, .col-75, .col-100 {
-        width: 100%;
+        width: 100% !important;
       }
     }
     .col-100 {
