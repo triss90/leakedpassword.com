@@ -1,37 +1,68 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/assets/css/app.css">
-    <title>Document</title>
-</head>
-<body>
+<?php include('_inc/header.php'); ?>
+<body id="home">
+<?php include('_inc/navigation.php'); ?>
 
-<nav id="navigation" aria-label="site">
-    <ul>
-        <li><a href="/">Leaked Password <span class="vh">Home</span></a></li>
-        <li><a href="/">Password</a></li>
-        <li><a href="/documentation">API</a></li>
-        <li><a href="/https://github.com/triss90/leakedpassword.com" target="_blank">GitHub</a></li>
-    </ul>
-</nav>
+<main class="content" id="front">
+    <div style="width: 100%;margin-top:-4rem;">
+        <div class="row">
+            <div class="col-100 center">
+                <h2>Has your password been leaked?</h2>
+                <p>Password hacking compromised more than 150 million accounts this past year.<br>
+                Find out if a password hack has exposed your password to the world.</p>
+            </div>
+        </div>
+        <form action="check_password.php" method="post" class="check-password" id="check-password">
+            <div class="row">
+                <div class="col-75">
+                    <input type="password" name="password" id="password" placeholder="Enter a password" value="" required>
+                </div>
+                <div class="col-25">
+                    <button id="buttonSubmit" type="submit" class="btn btn-block">Test password</button>
+                    <button id="buttonLoad" class="btn btn-block" type="button" style="display: none;" disabled>
+                        <div class="loader-fancy loader-fancy-small">
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-100 center" id="output"></div>
+        </div>
 
-<div class="content">
-    <div class="row">
-        <div class="col-50">Test</div>
-        <div class="col-25">Test</div>
-        <div class="col-25">Test</div>
+        <div class="row">
+            <div class="col-100 center">
+                <br<br><br><br>
+                <p>Developer? Implement the <a href="/api">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-100">Test</div>
-    </div>
-    <div class="row">
-        <div class="col-25">Test</div>
-        <div class="col-75">Test</div>
-    </div>
-</div>
+</main>
 
-</body>
-</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+            $('#buttonSubmit').hide();
+            $('#buttonLoad').show();
+            setTimeout(function(){
+                $.ajax({
+                    type: 'post',
+                    url: 'check_password.php',
+                    data: $('#check-password').serialize(),
+                    success: function(response) {
+                        $('#buttonLoad').hide();
+                        $('#buttonSubmit').show();
+                        $('#output').html(response);
+                        console.log(response);
+                    }
+                });
+            }, 1500);
+        });
+    });
+</script>
+
+<?php include('_inc/footer.php'); ?>

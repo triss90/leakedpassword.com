@@ -2,3 +2,16 @@ html, body {
   background: $color3;
   color: $color12;
 }
+
+#home {
+  background-image: url("/assets/img/trianglify.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#front {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
