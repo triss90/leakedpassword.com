@@ -12,6 +12,9 @@
         width: 100% !important;
       }
     }
+    .col-25, .col-50, .col-75, .col-100 {
+      margin: 0 0.5rem;
+    }
     .col-100 {
       width: 100%;
     }
