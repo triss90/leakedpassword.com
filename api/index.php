@@ -1,7 +1,7 @@
 <?php
 /*  API usage
-    https://api.leakedpasswords.com/password/{your-password}
-    https://api.leakedpasswords.com/sha1/{your-sha1-hash}
+    https://api.leakedpassword.com/password/{your-password}
+    https://api.leakedpassword.com/sha1/{your-sha1-hash}
 */
 
 // Search for partial string in array
