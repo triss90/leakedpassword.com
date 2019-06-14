@@ -70,6 +70,4 @@ else {
 
 // Encode json array and print data
 $data_json = json_encode($data_array);
-echo "<pre style='word-wrap: break-word; white-space: pre-wrap;'>";
 print_r($data_json);
-echo "</pre>";
