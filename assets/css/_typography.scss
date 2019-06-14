@@ -1,5 +1,93 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
 
-html, body {
+html {
   font-family: 'Ubuntu', sans-serif;
+  font-size: calc(1em + 0.5vw);
+  line-height: 1.5;
+}
+
+// Focus highlight borderx
+:focus:not([tabindex='-1']) {
+  outline: 4px solid $color6;
+  outline-offset: 2px;
+}
+
+// Custom highlight color
+::selection {
+  background: $color6; /* WebKit/Blink Browsers */
+}
+
+// Skip to content link
+[href='#main'] {
+  position: absolute;
+  top: -2em;
+  right: 0.7rem;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+ul {
+  &.inline {
+    margin: 1rem 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin: 0 0.25rem;
+    }
+  }
+  li {
+
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 2px dashed $color3;
+  position: relative;
+  display: block;
+  overflow: visible;
+  &.reversed {
+    border-top: 2px dashed $color12;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color3;
+    display: block;
+    transition: 0.3s;
+  }
+}
+
+pre {
+  background: $color3;
+  color: $color12;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+  "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+  "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  overflow-x: scroll;
+  padding: 1rem;
+  font-size: 0.75rem;
+  code {
+    font-size: 0.75rem;
+  }
+}
+
+code {
+  background: $color3;
+  color: $color12;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+  "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+  "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  padding: 0 0.25rem;
 }
