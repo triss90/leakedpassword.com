@@ -3,7 +3,7 @@
 <?php include('_inc/navigation.php'); ?>
 
 <main class="content" id="front">
-    <div style="width: 100%;margin-top:-4rem;">
+    <div style="width: 100%;margin-top:-6rem;">
         <div class="row">
             <div class="col-100 center">
                 <h2>Has your password been leaked?</h2>
@@ -31,10 +31,9 @@
         <div class="row">
             <div class="col-100 center" id="output"></div>
         </div>
-
         <div class="row">
             <div class="col-100 center">
-                <br<br><br><br>
+                <br<br><br>
                 <p>Developer? Implement the <a href="/api">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
             </div>
         </div>
@@ -56,8 +55,10 @@
                     success: function(response) {
                         $('#buttonLoad').hide();
                         $('#buttonSubmit').show();
-                        $('#output').html(response);
-                        console.log(response);
+                        var obj = JSON.parse(response);
+                        console.log(obj['error']);
+                        var json = JSON.stringify(obj, undefined, 2);
+                        $('#output').html("<pre style='word-wrap: break-word; white-space: pre-wrap;text-align: left;'>"+json+"</pre>");
                     }
                 });
             }, 1500);
