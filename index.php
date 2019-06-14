@@ -56,7 +56,7 @@
                         $('#buttonLoad').hide();
                         $('#buttonSubmit').show();
                         var obj = JSON.parse(response);
-                        console.log(obj['error']);
+                        // console.log(obj['password']['leak']);
                         var json = JSON.stringify(obj, undefined, 2);
                         $('#output').html("<pre style='word-wrap: break-word; white-space: pre-wrap;text-align: left;'>"+json+"</pre>");
                     }
