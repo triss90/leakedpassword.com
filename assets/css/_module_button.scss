@@ -7,4 +7,9 @@ button, .btn {
   margin-top: 1.5rem;
   cursor: pointer;
   color: $color3;
+  display: inline-block;
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
 }
