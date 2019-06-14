@@ -152,6 +152,8 @@ nav[aria-label='site'] {
         nav[aria-label='site'] ul li:first-child a {
           font-weight: bold;
           font-size: 20px; }
+          nav[aria-label='site'] ul li:first-child a .highlight {
+            color: #ffcb36; }
           nav[aria-label='site'] ul li:first-child a .vh {
             position: absolute !important;
             clip: rect(1px, 1px, 1px, 1px);
