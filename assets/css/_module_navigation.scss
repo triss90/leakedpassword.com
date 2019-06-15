@@ -4,6 +4,9 @@ nav[aria-label='site'] {
   box-shadow: 0 1rem 5rem -0.5rem $color5;
   height: 64px;
   line-height: 1.5;
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
   ul {
     max-width: 1200px;
     display: flex;
