@@ -3,6 +3,7 @@
     https://api.leakedpassword.com/password/{your-password}
     https://api.leakedpassword.com/sha1/{your-sha1-hash}
 */
+header("Access-Control-Allow-Origin: *");
 
 // Search for partial string in array
 function array_search_partial($arr, $keyword) {
