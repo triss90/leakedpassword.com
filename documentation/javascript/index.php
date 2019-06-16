@@ -15,7 +15,7 @@
                 <pre data-code="javascript">function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://api.leakedpassword.com/pass/1234', true);
+    xobj.open('GET', 'https://api.leakedpassword.com/pass/{your-password}', true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
           callback(xobj.responseText);
