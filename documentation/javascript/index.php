@@ -12,14 +12,24 @@
                 <h1>Javascript Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="javascript">function reqListener () {
-    console.log(this.responseText);
+                <pre data-code="javascript">function loadJSON(callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://api.leakedpassword.com/pass/1234', true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+       }
+    };
+    xobj.send(null);
 }
-
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "https://api.leakedpassword.com/pass/{your-password}");
-oReq.send();</pre>
+function init() {
+    loadJSON(function(response) {
+       var actual_JSON = JSON.parse(response);
+       console.log(actual_JSON);
+    });
+}
+init();</pre>
 
                 <h3>Response</h3>
                 <pre data-code="json">{
