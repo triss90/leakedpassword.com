@@ -1,5 +1,5 @@
 <?php include('../../_inc/header.php'); ?>
-<body class="documentation" id="about">
+<body class="documentation" id="guide">
 <?php include('../../_inc/navigation.php'); ?>
 
 <main class="content">
@@ -9,21 +9,37 @@
     <div class="documentation-content">
         <div class="row">
             <div class="col-100">
-                <h1>About the API</h1>
-                <p>The data is brought to you by <a href="https://www.troyhunt.com" target="_blank">‎Troy Hunt</a> over at <a href="haveibeenpwned.com" target="_blank">Have I Been Pwned</a>.</p>
-                <p>The API has been specifically designed to be easy to use! It requires no authentication, secret keys or anything else that would get in the way.</p>
-                <p>A sample usecase for the API, is testing, during the signup process, whether a user's password has previously been leaked, and take appropriate actions based on the result of the API query.</p>
-
-                <p>A sample test might look something like this:</p>
-                <pre data-code="javascript" class="javascript">$.getJSON("https://api.leakedpassword.com/pass/1234", function(data) {
-    if (data['password']['leak'] == true) {
-        // Alert the user to leaked password
-    } else {
-        // Continue signup process
+                <h1>Using the API</h1>
+                <p>There are two basic ways of querying the API. You can send us the unecrypted password and let us sha1 hash it before retrieving the data:</p>
+                <code>https://api.leakedpassword.com/pass/{your-clear-text-password}</code>
+                <p>Or you can hash the password before sending it to us. In theory this method should be faster, and obviously more secure:</p>
+                <code>https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}</code>
+                <h2>The response</h2>
+                <p>The typical successful response, should look something like this:</p>
+                <pre data-code="json">{
+    "password": {
+        "leak": true,
+        "hash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+        "seen": 1256907
     }
-});</pre>
+}</pre>
+                <h3>Sha1 format</h3>
+                <p>If you chose to query the API for a sha1 hash, this must be rendered as a hexadecimal number, 40 digits long (Example: <code>7110eda4d09e062aa5e4a390b0a572ac0d2c0220</code>). Otherwise the API will return an error:</p>
+                <pre data-code="json" class="json">{
+    "error": "The hash was not in a valid SHA1 format"
+}</pre>
 
 
+                <h3>HTTPS</h3>
+                <p>The API cannot be invoked over an unencrypted HTTP connection. The API will return the following error if called from a non-HTTPS connection:</p>
+                <pre data-code="json" class="json">{
+    "error": "Query from non-secure connection"
+}</pre>
+
+                <p>Other unsuccessful queries will return:</p>
+                <pre data-code="json" class="json">{
+    "error": "Invalid API query"
+}</pre>
             </div>
         </div>
     </div>
