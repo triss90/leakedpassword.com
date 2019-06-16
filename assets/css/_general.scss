@@ -15,3 +15,13 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
+footer {
+  position: relative;
+  padding: 2rem 0 5rem 2rem;
+  width: calc(100% - 300px);
+  left: 300px;
+  text-align: center;
+  color: $color14;
+  font-size: 0.8rem;
+}

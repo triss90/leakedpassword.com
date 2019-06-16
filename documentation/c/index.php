@@ -30,6 +30,6 @@ IRestResponse response = client.Execute(request);</pre>
             </div>
         </div>
     </div>
-
+    <?php include('../../_inc/credits.php'); ?>
 </main>
 <?php include('../../_inc/footer.php'); ?>

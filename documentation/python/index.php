@@ -27,6 +27,6 @@ print request.json()</pre>
             </div>
         </div>
     </div>
-
+    <?php include('../../_inc/credits.php'); ?>
 </main>
 <?php include('../../_inc/footer.php'); ?>
