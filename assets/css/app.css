@@ -138,7 +138,8 @@ pre {
     text-transform: uppercase;
     letter-spacing: 1px; }
   pre code {
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    background: none !important; }
 
 code {
   background: #31313e;
@@ -476,5 +477,14 @@ body#about a.link-about {
   cursor: default;
   background: #121a29; }
   body#about a.link-about:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#guide a.link-guide {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#guide a.link-guide:after {
     background-color: #ffcb36;
     width: 0.25rem; }

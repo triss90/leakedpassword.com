@@ -12,7 +12,7 @@
                 <h1>Java Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="java">import java.io.IOException;
+                <pre data-code="java" class="java">import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;

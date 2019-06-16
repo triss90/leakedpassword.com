@@ -12,7 +12,7 @@
                 <h1>PHP Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="php">&#60;?php
+                <pre data-code="php" class="php">&#60;?php
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, "https://api.leakedpassword.com/pass/{your-password}");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

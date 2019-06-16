@@ -12,7 +12,7 @@
                 <h1>jQuery Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="javascript">$.getJSON("https://api.leakedpassword.com/pass/{your-password}", function(data) {
+                <pre data-code="javascript" class="javascript">$.getJSON("https://api.leakedpassword.com/pass/{your-password}", function(data) {
     console.log(data);
 });</pre>
 

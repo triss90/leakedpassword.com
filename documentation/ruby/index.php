@@ -12,7 +12,7 @@
                 <h1>Ruby Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="ruby">require 'net/http'
+                <pre data-code="ruby" class="ruby">require 'net/http'
 require 'json'
 
 url = 'https://api.leakedpassword.com/pass/{your-password}'

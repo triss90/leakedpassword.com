@@ -12,7 +12,7 @@
                 <h1>Shell Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="shell">curl --location --request GET https://api.leakedpassword.com/pass/{your-password}</pre>
+                <pre data-code="shell" class="shell">curl --location --request GET https://api.leakedpassword.com/pass/{your-password}</pre>
 
                 <h3>Response</h3>
                 <pre data-code="json">{

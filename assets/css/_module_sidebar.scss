@@ -196,3 +196,15 @@ body#about {
     }
   }
 }
+body#guide {
+  a.link-guide {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}

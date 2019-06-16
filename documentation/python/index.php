@@ -12,7 +12,7 @@
                 <h1>Python Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="python">import requests
+                <pre data-code="python" class="python">import requests
 request = requests.get('https://api.leakedpassword.com/pass/{your-password}')
 print request.json()</pre>
 

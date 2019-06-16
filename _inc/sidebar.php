@@ -1,8 +1,7 @@
 <aside id="sidebar">
     <p class="title">Introduction</p>
     <a href="/documentation/about" class="link-about">About</a>
-    <a href="">Guide</a>
-    <a href="">Example</a>
+    <a href="/documentation/guide" class="link-guide">Guide</a>
 
     <p class="title">Implementation</p>
     <a href="/documentation/shell/" class="link-shell">Shell</a>
