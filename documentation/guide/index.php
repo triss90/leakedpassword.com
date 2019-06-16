@@ -15,7 +15,7 @@
                 <p>Or you can hash the password before sending it to us. In theory this method should be faster, and obviously more secure:</p>
                 <code>https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}</code>
                 <h2>The response</h2>
-                <p>The typical successful response, should look something like this:</p>
+                <p>The typical successful response should look something like this:</p>
                 <pre data-code="json">{
     "password": {
         "leak": true,
@@ -23,7 +23,7 @@
         "seen": 1256907
     }
 }</pre>
-                <h3>Sha1 format</h3>
+                <h3>SHA1 format</h3>
                 <p>If you chose to query the API for a sha1 hash, this must be rendered as a hexadecimal number, 40 digits long (Example: <code>7110eda4d09e062aa5e4a390b0a572ac0d2c0220</code>). Otherwise the API will return an error:</p>
                 <pre data-code="json" class="json">{
     "error": "The hash was not in a valid SHA1 format"
