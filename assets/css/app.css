@@ -75,7 +75,8 @@ html {
 
 :focus:not([tabindex='-1']) {
   outline: 4px solid #ffcb36;
-  outline-offset: 2px; }
+  outline-offset: 2px;
+  z-index: 4; }
 
 ::selection {
   background: #ffcb36;

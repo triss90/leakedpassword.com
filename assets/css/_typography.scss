@@ -10,6 +10,7 @@ html {
 :focus:not([tabindex='-1']) {
   outline: 4px solid $color6;
   outline-offset: 2px;
+  z-index: 4;
 }
 
 // Custom highlight color
