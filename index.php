@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-100 center">
                 <br<br><br>
-                <p style="color: #a6b0c3; font-size: 0.8rem;">Developer? Implement the <a href="/api">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
+                <p style="color: #a6b0c3; font-size: 0.8rem;">Developer? Implement the <a href="/documentation">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
             </div>
         </div>
     </div>
