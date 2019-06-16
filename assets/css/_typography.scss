@@ -69,7 +69,7 @@ hr {
 }
 
 pre {
-  background: $color3;
+  background: $color1;
   color: $color12;
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
   "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
@@ -77,13 +77,25 @@ pre {
   overflow-x: scroll;
   padding: 1rem;
   font-size: 0.75rem;
+  position: relative;
+  &:after {
+    content: attr(data-code);
+    position: absolute;
+    top: 5px;
+    left: 0.5rem;
+    color: $color14;
+    font-weight: bold;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
   code {
     font-size: 0.75rem;
   }
 }
 
 code {
-  background: $color3;
+  background: $color1;
   color: $color12;
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
   "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",

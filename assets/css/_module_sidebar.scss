@@ -1,0 +1,174 @@
+aside#sidebar {
+  width: 300px;
+  box-shadow: inset -9rem 0 9rem -9rem #000;
+  border-right: 1px solid #29303d;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  height: 100vh;
+  z-index: 9;
+  .title {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: $color14;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .55rem;
+    border-bottom: 1px solid rgba(55,64,81,0.5);
+    position: relative;
+    margin: 2rem 0 0 0;
+    padding: 0rem 2rem;
+    left: -2rem;
+    width: calc(100% + 2rem);
+    @media(max-width: calc(1200px + 2rem)) {
+      padding: 0rem 1rem;
+      left: -1rem;
+      width: calc(100% + 1rem);
+    }
+  }
+  a {
+    display: block;
+    position: relative;
+    border: 0;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 0.35rem 2rem;
+    left: -2rem;
+    width: calc(100% + 2rem);
+    margin: 0;
+    @media(max-width: 1200px) {
+      padding: 0.35rem 1rem;
+      left: -1rem;
+      width: calc(100% + 1rem);
+      margin: 0;
+    }
+    &.selected {
+      color: $color6;
+      pointer-events: none;
+      cursor: default;
+      background: $color2;
+      &:after {
+        background-color: $color6;
+        width: 0.25rem;
+      }
+    }
+    &:after {
+      transition: width .3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: block;
+      background-color: $color15;
+      height: 100%;
+      width: .002%;
+    }
+    &:hover {
+      background-color: rgba(43,61,95,0.125);
+      box-shadow: inset -4.5rem 0 6.75rem -7rem $color5;
+      &:after {
+        width: .25rem;
+      }
+    }
+  }
+}
+
+body#shell {
+  a.link-shell {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+
+body#shell {
+  a.link-shell {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+
+body#php {
+  a.link-php {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#jquery {
+  a.link-jquery {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#javascript {
+  a.link-javascript {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#python {
+  a.link-python {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#java {
+  a.link-java {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#ruby {
+  a.link-ruby {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}

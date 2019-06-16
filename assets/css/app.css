@@ -1,4 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap");
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 2.25rem 0.5rem 1.75rem 0.5rem;
+  background: #282a36; }
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #8be9fd; }
+
+.hljs-function .hljs-keyword {
+  color: #ff79c6; }
+
+.hljs,
+.hljs-subst {
+  color: #f8f8f2; }
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #f1fa8c; }
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #6272a4; }
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
 * {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -67,17 +120,28 @@ hr {
     transition: 0.3s; }
 
 pre {
-  background: #0f151f;
+  background: #31313e;
   color: #ffffff;
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   overflow-x: scroll;
   padding: 1rem;
-  font-size: 0.75rem; }
+  font-size: 0.75rem;
+  position: relative; }
+  pre:after {
+    content: attr(data-code);
+    position: absolute;
+    top: 5px;
+    left: 0.5rem;
+    color: #647594;
+    font-weight: bold;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
   pre code {
     font-size: 0.75rem; }
 
 code {
-  background: #0f151f;
+  background: #31313e;
   color: #ffffff;
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   font-size: 0.85rem;
@@ -93,7 +157,7 @@ html, body {
   background-size: cover; }
 
 #front {
-  min-height: calc(100vh - 64px);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -124,12 +188,21 @@ html, body {
   .content .center {
     text-align: center; }
 
+.documentation-content {
+  position: relative;
+  padding: 2rem 0 5rem 2rem;
+  width: calc(100% - 300px);
+  left: 300px; }
+
 nav[aria-label='site'] {
   border-bottom: 1px solid #31313e;
   background: #0f151f;
   box-shadow: 0 1rem 5rem -0.5rem #000000;
   height: 64px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  z-index: 10;
+  position: fixed;
+  width: 100vw; }
   nav[aria-label='site'] ul {
     max-width: 1200px;
     display: flex;
@@ -247,3 +320,143 @@ button, .btn {
     stroke: #0f151f; }
   80%, 90% {
     stroke: #070a0f; } }
+
+aside#sidebar {
+  width: 300px;
+  box-shadow: inset -9rem 0 9rem -9rem #000;
+  border-right: 1px solid #29303d;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  height: 100vh;
+  z-index: 9; }
+  aside#sidebar .title {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #647594;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .55rem;
+    border-bottom: 1px solid rgba(55, 64, 81, 0.5);
+    position: relative;
+    margin: 2rem 0 0 0;
+    padding: 0rem 2rem;
+    left: -2rem;
+    width: calc(100% + 2rem); }
+    @media (max-width: calc(1200px + 2rem)) {
+      aside#sidebar .title {
+        padding: 0rem 1rem;
+        left: -1rem;
+        width: calc(100% + 1rem); } }
+  aside#sidebar a {
+    display: block;
+    position: relative;
+    border: 0;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 0.35rem 2rem;
+    left: -2rem;
+    width: calc(100% + 2rem);
+    margin: 0; }
+    @media (max-width: 1200px) {
+      aside#sidebar a {
+        padding: 0.35rem 1rem;
+        left: -1rem;
+        width: calc(100% + 1rem);
+        margin: 0; } }
+    aside#sidebar a.selected {
+      color: #ffcb36;
+      pointer-events: none;
+      cursor: default;
+      background: #121a29; }
+      aside#sidebar a.selected:after {
+        background-color: #ffcb36;
+        width: 0.25rem; }
+    aside#sidebar a:after {
+      transition: width .3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: block;
+      background-color: #2b3d5f;
+      height: 100%;
+      width: .002%; }
+    aside#sidebar a:hover {
+      background-color: rgba(43, 61, 95, 0.125);
+      box-shadow: inset -4.5rem 0 6.75rem -7rem #000000; }
+      aside#sidebar a:hover:after {
+        width: .25rem; }
+
+body#shell a.link-shell {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#shell a.link-shell:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#shell a.link-shell {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#shell a.link-shell:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#php a.link-php {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#php a.link-php:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#jquery a.link-jquery {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#jquery a.link-jquery:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#javascript a.link-javascript {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#javascript a.link-javascript:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#python a.link-python {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#python a.link-python:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#java a.link-java {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#java a.link-java:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#ruby a.link-ruby {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#ruby a.link-ruby:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }

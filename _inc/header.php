@@ -8,6 +8,7 @@
     <title>Leaked Password | Has your password been leaked?</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
