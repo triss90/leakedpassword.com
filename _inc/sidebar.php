@@ -1,6 +1,6 @@
 <aside id="sidebar">
     <p class="title">Introduction</p>
-    <a href="">About</a>
+    <a href="/documentation/about" class="link-about">About</a>
     <a href="">Guide</a>
     <a href="">Example</a>
 

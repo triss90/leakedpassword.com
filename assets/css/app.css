@@ -460,3 +460,21 @@ body#ruby a.link-ruby {
   body#ruby a.link-ruby:after {
     background-color: #ffcb36;
     width: 0.25rem; }
+
+body#c a.link-c {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#c a.link-c:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }
+
+body#about a.link-about {
+  color: #ffcb36;
+  pointer-events: none;
+  cursor: default;
+  background: #121a29; }
+  body#about a.link-about:after {
+    background-color: #ffcb36;
+    width: 0.25rem; }

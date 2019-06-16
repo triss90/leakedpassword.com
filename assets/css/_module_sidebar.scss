@@ -172,3 +172,27 @@ body#ruby {
     }
   }
 }
+body#c {
+  a.link-c {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
+body#about {
+  a.link-about {
+    color: $color6;
+    pointer-events: none;
+    cursor: default;
+    background: $color2;
+    &:after {
+      background-color: $color6;
+      width: 0.25rem;
+    }
+  }
+}
