@@ -12,7 +12,12 @@
                 <h1>C# Implementation</h1>
 
                 <h3>Request</h3>
-                <pre data-code="c#"></pre>
+                <pre data-code="c#">var client = new RestClient("https://api.leakedpassword.com/pass/{your-password}");
+var request = new RestRequest(Method.GET);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Accept", "application/json");
+request.AddParameter("application/json", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);</pre>
 
                 <h3>Response</h3>
                 <pre data-code="json">{
