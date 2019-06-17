@@ -11,9 +11,14 @@
             <div class="col-100">
                 <h1>Python Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="python" class="python">import requests
 request = requests.get('https://api.leakedpassword.com/pass/{your-password}')
+print request.json()</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="python" class="python">import requests
+request = requests.get('https://api.leakedpassword.com/sha1/{your-sha1-hash}')
 print request.json()</pre>
 
                 <h3>Response</h3>

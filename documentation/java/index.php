@@ -11,7 +11,7 @@
             <div class="col-100">
                 <h1>Java Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="java" class="java">import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,6 +21,43 @@ public class Main {
   public static void main(String[] args) {
     System.out
         .println(jsonGetRequest("https://api.leakedpassword.com/pass/{your-password}"));
+  }
+
+  private static String streamToString(InputStream inputStream) {
+    String text = new Scanner(inputStream, "UTF-8").useDelimiter("\\Z").next();
+    return text;
+  }
+
+  public static String jsonGetRequest(String urlQueryString) {
+    String json = null;
+    try {
+      URL url = new URL(urlQueryString);
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      connection.setDoOutput(true);
+      connection.setInstanceFollowRedirects(false);
+      connection.setRequestMethod("GET");
+      connection.setRequestProperty("Content-Type", "application/json");
+      connection.setRequestProperty("charset", "utf-8");
+      connection.connect();
+      InputStream inStream = connection.getInputStream();
+      json = streamToString(inStream);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+    return json;
+  }
+}</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="java" class="java">import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    System.out
+        .println(jsonGetRequest("https://api.leakedpassword.com/sha1/{your-sha1-hash}"));
   }
 
   private static String streamToString(InputStream inputStream) {

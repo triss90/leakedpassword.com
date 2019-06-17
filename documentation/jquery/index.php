@@ -11,8 +11,13 @@
             <div class="col-100">
                 <h1>jQuery Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="javascript" class="javascript">$.getJSON("https://api.leakedpassword.com/pass/{your-password}", function(data) {
+    console.log(data);
+});</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="javascript" class="javascript">$.getJSON("https://api.leakedpassword.com/sha1/{your-sha1-hash}", function(data) {
     console.log(data);
 });</pre>
 

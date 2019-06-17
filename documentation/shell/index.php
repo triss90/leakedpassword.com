@@ -11,8 +11,11 @@
             <div class="col-100">
                 <h1>Shell Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="shell" class="shell">curl --location --request GET https://api.leakedpassword.com/pass/{your-password}</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="shell" class="shell">curl --location --request GET https://api.leakedpassword.com/sha1/{your-sha1-hash}</pre>
 
                 <h3>Response</h3>
                 <pre data-code="json">{

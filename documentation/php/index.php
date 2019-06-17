@@ -11,10 +11,20 @@
             <div class="col-100">
                 <h1>PHP Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="php" class="php">&#60;?php
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, "https://api.leakedpassword.com/pass/{your-password}");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($curl);
+    curl_close($curl);
+    print_r($response);
+?></pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="php" class="php">&#60;?php
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, "https://api.leakedpassword.com/sha1/{your-sha1-hash}");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($curl);
     curl_close($curl);

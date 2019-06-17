@@ -11,11 +11,20 @@
             <div class="col-100">
                 <h1>Ruby Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="ruby" class="ruby">require 'net/http'
 require 'json'
 
 url = 'https://api.leakedpassword.com/pass/{your-password}'
+uri = URI(url)
+response = Net::HTTP.get(uri)
+JSON.parse(response)</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="ruby" class="ruby">require 'net/http'
+require 'json'
+
+url = 'https://api.leakedpassword.com/sha1/{your-sha1-hash}'
 uri = URI(url)
 response = Net::HTTP.get(uri)
 JSON.parse(response)</pre>

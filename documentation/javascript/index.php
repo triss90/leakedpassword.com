@@ -11,11 +11,31 @@
             <div class="col-100">
                 <h1>Javascript Implementation</h1>
 
-                <h3>Request</h3>
+                <h3>Password Request</h3>
                 <pre data-code="javascript">function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     xobj.open('GET', 'https://api.leakedpassword.com/pass/{your-password}', true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+       }
+    };
+    xobj.send(null);
+}
+function init() {
+    loadJSON(function(response) {
+       var actual_JSON = JSON.parse(response);
+       console.log(actual_JSON);
+    });
+}
+init();</pre>
+
+                <h3>SHA1 Hash Request</h3>
+                <pre data-code="javascript">function loadJSON(callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://api.leakedpassword.com/sha1/{your-sha1-hash}', true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
           callback(xobj.responseText);
