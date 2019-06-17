@@ -7,42 +7,45 @@ nav[aria-label='site'] {
   z-index: 10;
   position: fixed;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a.logo {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: none;
+    display: block;
+    margin: 0 1rem;
+    .highlight {
+      color: $color6;
+    }
+    .vh {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0 !important;
+      border: 0 !important;
+      height: 1px !important;
+      width: 1px !important;
+      overflow: hidden;
+    }
+  }
   ul {
     max-width: 1200px;
-    display: flex;
     height: 100%;
     list-style-type: none;
-    align-items: center;
-    margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     li {
-      margin: 0;
+      margin: 0 0.25rem;
       a {
         color: $color12;
         height: 100%;
         text-decoration: none;
         font-size: 16px;
         border: 0;
-      }
-      &:first-child {
-        width: 80%;
-        a {
-          font-weight: bold;
-          font-size: 20px;
-          .highlight {
-            color: $color6;
-          }
-          .vh {
-            position: absolute !important;
-            clip: rect(1px, 1px, 1px, 1px);
-            padding: 0 !important;
-            border: 0 !important;
-            height: 1px !important;
-            width: 1px !important;
-            overflow: hidden;
-          }
-        }
+        padding: 0;
       }
     }
   }

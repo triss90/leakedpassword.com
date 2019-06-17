@@ -217,39 +217,43 @@ nav[aria-label='site'] {
   line-height: 1.5;
   z-index: 10;
   position: fixed;
-  width: 100vw; }
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  nav[aria-label='site'] a.logo {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: none;
+    display: block;
+    margin: 0 1rem; }
+    nav[aria-label='site'] a.logo .highlight {
+      color: #ffcb36; }
+    nav[aria-label='site'] a.logo .vh {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0 !important;
+      border: 0 !important;
+      height: 1px !important;
+      width: 1px !important;
+      overflow: hidden; }
   nav[aria-label='site'] ul {
     max-width: 1200px;
-    display: flex;
     height: 100%;
     list-style-type: none;
-    align-items: center;
-    margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
     justify-content: space-between; }
     nav[aria-label='site'] ul li {
-      margin: 0; }
+      margin: 0 0.25rem; }
       nav[aria-label='site'] ul li a {
         color: #ffffff;
         height: 100%;
         text-decoration: none;
         font-size: 16px;
-        border: 0; }
-      nav[aria-label='site'] ul li:first-child {
-        width: 80%; }
-        nav[aria-label='site'] ul li:first-child a {
-          font-weight: bold;
-          font-size: 20px; }
-          nav[aria-label='site'] ul li:first-child a .highlight {
-            color: #ffcb36; }
-          nav[aria-label='site'] ul li:first-child a .vh {
-            position: absolute !important;
-            clip: rect(1px, 1px, 1px, 1px);
-            padding: 0 !important;
-            border: 0 !important;
-            height: 1px !important;
-            width: 1px !important;
-            overflow: hidden; }
+        border: 0;
+        padding: 0; }
 
 input[type='text'],
 input[type='password'] {
