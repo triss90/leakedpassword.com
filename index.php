@@ -42,6 +42,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
 <script>
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     $(function () {
         $('form').on('submit', function (e) {
             e.preventDefault();
@@ -60,7 +63,7 @@
                         if (obj['password']['leak'] == true) {
                             $('#output').html(
                                 "<h2 style='color:#e31d65;'>Password has been leaked!</h2>" +
-                                "<h3>This password has been seen <code style='color: #e31d65;'>"+obj['password']['seen']+"</code> times before.</h3>" +
+                                "<h3>This password has been seen <code style='color: #e31d65;'>"+numberWithCommas(obj['password']['seen'])+"</code> times before.</h3>" +
                                 "<p>This password has previously appeared in a data breach and should never be used. If you've ever used it anywhere before, change it!</p>"
                             );
                         } else {
