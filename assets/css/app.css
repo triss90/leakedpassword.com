@@ -162,7 +162,11 @@ html, body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 6rem 0; }
+  #front .content-inner {
+    width: 100%;
+    margin-top: -3rem; }
 
 footer {
   position: relative;

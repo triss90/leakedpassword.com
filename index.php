@@ -3,7 +3,7 @@
 <?php include('_inc/navigation.php'); ?>
 
 <main class="content" id="front">
-    <div style="width: 100%;margin-top:-6rem;">
+    <div class="content-inner">
         <div class="row">
             <div class="col-100 center">
                 <h1>Has your password been leaked?</h1>

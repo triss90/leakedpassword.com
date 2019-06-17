@@ -14,6 +14,11 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6rem 0;
+  .content-inner {
+    width: 100%;
+    margin-top: -3rem;
+  }
 }
 
 footer {
