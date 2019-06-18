@@ -65,6 +65,10 @@ nav[aria-label='site'] {
     }
     &.active {
       display: block !important;
+      @media(min-width: 768px) {
+        display: flex !important;
+      }
+
     }
     li {
       margin: 0 0.25rem;
