@@ -30,11 +30,11 @@
                     <li>Prolonged and aggressive querying of the service such that it impacts availability <em>or</em> costs</li>
                     <li>Anything deliberately intended to limit service availability such as denial of service attacks</li>
                     <li>Deliberate attempts to circumvent the rate limit or abuse other measures design to ensure acceptable use</li>
-                    <li>Not <a href="#UserAgent">properly identifying the user agent</a> such that it accurately describes the consumer of the API</li>
+                    <li>Not <a href="https://haveibeenpwned.com/API/v2#UserAgent">properly identifying the user agent</a> such that it accurately describes the consumer of the API</li>
                     <li>Misrepresenting the consuming client by impersonating other user agents in an attempt to obfuscate API requests</li>
                     <li>Other services designed to fraudulently represent the Have I Been Pwned name or brand</li>
                     <li>Misrepresenting the source of the data as originating from somewhere other than Have I Been Pwned</li>
-                    <li>Not adhering to the Creative Commons Attribution License <a href="#AcceptableUse">as described below</a></li>
+                    <li>Not adhering to the Creative Commons Attribution License <a href="https://haveibeenpwned.com/API/v2#AcceptableUse">as described below</a></li>
                     <li>Automating the consumption of other APIs not explicitly documented on this page</li>
                     <li>Using the service in a fashion that brings Have I Been Pwned into disrepute</li>
                 </ul>
