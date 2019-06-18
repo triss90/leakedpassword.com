@@ -7,9 +7,15 @@ nav[aria-label='site'] {
   z-index: 10;
   position: fixed;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .navigation-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    height: 95%;
+  }
   a.logo {
     font-weight: bold;
     font-size: 20px;
@@ -30,13 +36,36 @@ nav[aria-label='site'] {
     }
   }
   ul {
-    max-width: 1200px;
     height: 100%;
     list-style-type: none;
     padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 768px) {
+      display: none;
+      background: red;
+      width: 100%;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      margin: 0;
+      border-bottom: 1px solid $color1;
+      background: $color3;
+      box-shadow: 0 1rem 5rem -0.5rem $color5;
+      padding: 1rem 0;
+      text-align: center;
+      height: 150px;
+      li {
+        a {
+          display: block;
+          padding: 0.3rem 0 !important;
+        }
+      }
+    }
+    &.active {
+      display: block !important;
+    }
     li {
       margin: 0 0.25rem;
       a {
@@ -46,6 +75,23 @@ nav[aria-label='site'] {
         font-size: 16px;
         border: 0;
         padding: 0;
+      }
+    }
+  }
+  button#navigation-trigger {
+    background: none;
+    display: none;
+    border: none;
+    padding: 0.25rem 1rem;
+    margin: 0 0.5rem;
+    @media(max-width: 768px) {
+      display: block;
+    }
+    svg {
+      position: relative;
+      top: 0.25rem;
+      path {
+        fill: $color12;
       }
     }
   }

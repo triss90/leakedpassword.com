@@ -176,6 +176,11 @@ footer {
   text-align: center;
   color: #647594;
   font-size: 0.8rem; }
+  @media (max-width: 768px) {
+    footer {
+      left: 0;
+      width: 100%;
+      padding: 2rem 0 5rem 0; } }
 
 .content {
   max-width: 1200px;
@@ -208,6 +213,11 @@ footer {
   padding: 2rem 0 5rem 2rem;
   width: calc(100% - 300px);
   left: 300px; }
+  @media (max-width: 768px) {
+    .documentation-content {
+      left: 0;
+      width: calc(100% - 1rem);
+      padding: 2rem 0 5rem 0; } }
 
 nav[aria-label='site'] {
   border-bottom: 1px solid #31313e;
@@ -217,10 +227,15 @@ nav[aria-label='site'] {
   line-height: 1.5;
   z-index: 10;
   position: fixed;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  width: 100vw; }
+  nav[aria-label='site'] .navigation-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    height: 95%; }
   nav[aria-label='site'] a.logo {
     font-weight: bold;
     font-size: 20px;
@@ -238,13 +253,32 @@ nav[aria-label='site'] {
       width: 1px !important;
       overflow: hidden; }
   nav[aria-label='site'] ul {
-    max-width: 1200px;
     height: 100%;
     list-style-type: none;
     padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    @media (max-width: 768px) {
+      nav[aria-label='site'] ul {
+        display: none;
+        background: red;
+        width: 100%;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        margin: 0;
+        border-bottom: 1px solid #31313e;
+        background: #0f151f;
+        box-shadow: 0 1rem 5rem -0.5rem #000000;
+        padding: 1rem 0;
+        text-align: center;
+        height: 150px; }
+        nav[aria-label='site'] ul li a {
+          display: block;
+          padding: 0.3rem 0 !important; } }
+    nav[aria-label='site'] ul.active {
+      display: block !important; }
     nav[aria-label='site'] ul li {
       margin: 0 0.25rem; }
       nav[aria-label='site'] ul li a {
@@ -254,6 +288,20 @@ nav[aria-label='site'] {
         font-size: 16px;
         border: 0;
         padding: 0; }
+  nav[aria-label='site'] button#navigation-trigger {
+    background: none;
+    display: none;
+    border: none;
+    padding: 0.25rem 1rem;
+    margin: 0 0.5rem; }
+    @media (max-width: 768px) {
+      nav[aria-label='site'] button#navigation-trigger {
+        display: block; } }
+    nav[aria-label='site'] button#navigation-trigger svg {
+      position: relative;
+      top: 0.25rem; }
+      nav[aria-label='site'] button#navigation-trigger svg path {
+        fill: #ffffff; }
 
 input[type='text'],
 input[type='password'] {
@@ -349,6 +397,25 @@ aside#sidebar {
   bottom: 0;
   height: 100vh;
   z-index: 9; }
+  @media (max-width: 768px) {
+    aside#sidebar {
+      width: 100%;
+      display: none;
+      border-bottom: 1px solid #31313e;
+      background: #0f151f;
+      left: 0;
+      top: 214px;
+      text-align: center;
+      z-index: 11;
+      overflow-y: scroll; }
+      aside#sidebar .title, aside#sidebar a {
+        margin: 0.5rem 0 0 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        display: block;
+        left: 0 !important; } }
+  aside#sidebar.active {
+    display: block; }
   aside#sidebar .title {
     height: 2.5rem;
     line-height: 2.5rem;

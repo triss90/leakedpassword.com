@@ -3,4 +3,9 @@
   padding: 2rem 0 5rem 2rem;
   width: calc(100% - 300px);
   left: 300px;
+  @media(max-width: 768px) {
+    left: 0;
+    width: calc(100% - 1rem);
+    padding: 2rem 0 5rem 0;
+  }
 }

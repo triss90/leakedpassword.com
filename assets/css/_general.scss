@@ -29,4 +29,9 @@ footer {
   text-align: center;
   color: $color14;
   font-size: 0.8rem;
+  @media(max-width: 768px) {
+    left: 0;
+    width: 100%;
+    padding: 2rem 0 5rem 0;
+  }
 }

@@ -7,6 +7,27 @@ aside#sidebar {
   bottom: 0;
   height: 100vh;
   z-index: 9;
+  @media(max-width: 768px) {
+    width: 100%;
+    display: none;
+    border-bottom: 1px solid $color1;
+    background: $color3;
+    left: 0;
+    top: 214px;
+    text-align: center;
+    z-index: 11;
+    overflow-y: scroll;
+    .title, a {
+      margin: 0.5rem 0 0 0 !important;
+      width: 100% !important;
+      padding: 0 !important;
+      display: block;
+      left: 0 !important;
+    }
+  }
+  &.active {
+    display: block;
+  }
   .title {
     height: 2.5rem;
     line-height: 2.5rem;
