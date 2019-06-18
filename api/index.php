@@ -1,6 +1,6 @@
 <?php
 /*  API usage
-    https://api.leakedpassword.com/password/{your-password}
+    https://api.leakedpassword.com/pass/{your-password}
     https://api.leakedpassword.com/sha1/{your-sha1-hash}
 */
 header("Access-Control-Allow-Origin: *");
