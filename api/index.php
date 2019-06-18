@@ -8,8 +8,9 @@ header("Access-Control-Allow-Origin: *");
 // Search for partial string in array
 function array_search_partial($arr, $keyword) {
     foreach($arr as $index => $string) {
-        if (strpos($string, $keyword) !== FALSE)
+        if (strpos($string, $keyword) !== FALSE) {
             return $index;
+        }
     }
 }
 
