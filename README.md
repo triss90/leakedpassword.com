@@ -1,6 +1,8 @@
 # leakedpassword.com
 _An API for validating the leaked status of a given password or hash, based on data from [Have I Been Pwned](https://haveibeenpwned.com)_
 
+View the full documentation here: [leakedpassword.com/documentation](https://leakedpassword.com/documentation/)
+
 ## Using the API
 There are two basic ways of querying the API. You can send us the unecrypted password and let us sha1 hash it before retrieving the data:
 `https://api.leakedpassword.com/pass/{your-clear-text-password}`
