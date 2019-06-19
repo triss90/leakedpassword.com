@@ -159,7 +159,7 @@ html, body {
   background-size: cover; }
 
 #front {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,6 +176,13 @@ footer {
   text-align: center;
   color: #647594;
   font-size: 0.8rem; }
+  footer.home {
+    width: 100% !important;
+    left: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 0.6rem;
+    height: 64px; }
   @media (max-width: 768px) {
     footer {
       left: 0;
