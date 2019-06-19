@@ -159,7 +159,7 @@ html, body {
   background-size: cover; }
 
 #front {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 136px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +182,7 @@ footer {
     padding: 0;
     line-height: 1;
     font-size: 0.6rem;
-    height: 64px; }
+    height: 120px; }
   @media (max-width: 768px) {
     footer {
       left: 0;
