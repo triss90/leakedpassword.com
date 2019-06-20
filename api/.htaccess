@@ -1,3 +1,4 @@
 RewriteEngine On
 RewriteRule ^pass/([a-zA-Z0-9_-]+)$ index.php?password=$1
 RewriteRule ^sha1/([a-zA-Z0-9_-]+)$ index.php?password=$1&sha1=1
+RewriteRule ^* index.php
