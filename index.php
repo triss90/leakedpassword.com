@@ -75,7 +75,8 @@
                         } else {
                             $('#output').html(
                                 "<h2 style='color:#25a954;'>Good news!</h2>" +
-                                "<p>This password wasn't found among any of the leaked passwords. That doesn't necessarily mean it's a good password, merely that it's not indexed. If you're not already using a password manager, you should probably consider doing that.</p>"
+                                "<p>This password wasn't found among any of the leaked passwords. That doesn't necessarily mean it's a good password though, merely that it's not indexed. " +
+                                "If you're not already using a password manager, you should. You can also generate complex passwords with <a href='https://webbox.dev/password/' target='_blank'>the Webbox password generator</a>.</p>"
                             );
                         }
                     }
