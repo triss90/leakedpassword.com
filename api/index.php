@@ -74,5 +74,3 @@ else {
 // Encode json array and print data
 $data_json = json_encode($data_array);
 print_r($data_json);
-
-//echo htmlspecialchars($_GET['password']);
