@@ -11,9 +11,9 @@
             <div class="col-100">
                 <h1>Using the API</h1>
                 <p>There are two basic ways of querying the API. You can send us the unecrypted password and let us sha1 hash it before retrieving the data:</p>
-                <code>https://api.leakedpassword.com/pass/{your-clear-text-password}</code>
+                <code style="color: #e31d65">https://api.leakedpassword.com/pass/{your-clear-text-password}</code>
                 <p>Or you can hash the password before sending it to us. In theory this method should be faster, and obviously more secure:</p>
-                <code>https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}</code>
+                <code style="color: #25a954">https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}</code>
                 <h2>The response</h2>
                 <p>The typical successful response should look something like this:</p>
                 <pre data-code="json">{
