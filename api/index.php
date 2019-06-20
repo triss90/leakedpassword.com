@@ -4,6 +4,7 @@
     https://api.leakedpassword.com/sha1/{your-sha1-hash}
 */
 header("Access-Control-Allow-Origin: *");
+header('Content-Type: charset=utf-8');
 
 // Search for partial string in array
 function array_search_partial($arr, $keyword) {
@@ -73,3 +74,5 @@ else {
 // Encode json array and print data
 $data_json = json_encode($data_array);
 print_r($data_json);
+
+//echo htmlspecialchars($_GET['password']);
