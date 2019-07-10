@@ -12,7 +12,7 @@
                 <h1>Using the API</h1>
                 <p>There are two basic ways of querying the API. You can send us the unecrypted password and let us sha1 hash it before retrieving the data:</p>
                 <code style="color: #e31d65">https://api.leakedpassword.com/pass/{your-clear-text-password}</code>
-                <p>Or you can hash the password before sending it to us. In theory this method should be faster, and obviously more secure. This is the preferred method use:</p>
+                <p>Or you can hash the password before sending it to us. This is theoretically faster, as we don't have to go through process of hashing the password. As we never receive the clear-text-password, this method is more secure and thus the preferred method:</p>
                 <code style="color: #25a954">https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}</code>
                 <h2>The response</h2>
                 <p>The typical successful response should look something like this:</p>
