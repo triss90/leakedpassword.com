@@ -290,7 +290,7 @@ nav[aria-label='site'] {
         nav[aria-label='site'] ul.active {
           display: flex !important; } }
     nav[aria-label='site'] ul li {
-      margin: 0 0.25rem; }
+      margin: 0 0.55rem; }
       nav[aria-label='site'] ul li a {
         color: #ffffff;
         height: 100%;
