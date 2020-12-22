@@ -1,0 +1,103 @@
+nav[aria-label='site'] {
+  border-bottom: 1px solid $color1;
+  background: $color3;
+  box-shadow: 0 1rem 5rem -0.5rem $color5;
+  height: 64px;
+  line-height: 1.5;
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  .navigation-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    height: 95%;
+  }
+  a.logo {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: none;
+    display: block;
+    margin: 0 1rem;
+    .highlight {
+      color: $color6;
+    }
+    .vh {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0 !important;
+      border: 0 !important;
+      height: 1px !important;
+      width: 1px !important;
+      overflow: hidden;
+    }
+  }
+  ul {
+    height: 100%;
+    list-style-type: none;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media(max-width: 768px) {
+      display: none;
+      background: red;
+      width: 100%;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      margin: 0;
+      border-bottom: 1px solid $color1;
+      background: $color3;
+      box-shadow: 0 1rem 5rem -0.5rem $color5;
+      padding: 1rem 0;
+      text-align: center;
+      height: 150px;
+      li {
+        a {
+          display: block;
+          padding: 0.3rem 0 !important;
+        }
+      }
+    }
+    &.active {
+      display: block !important;
+      @media(min-width: 768px) {
+        display: flex !important;
+      }
+
+    }
+    li {
+      margin: 0 0.55rem;
+      a {
+        color: $color12;
+        height: 100%;
+        text-decoration: none;
+        font-size: 16px;
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+  button#navigation-trigger {
+    background: none;
+    display: none;
+    border: none;
+    padding: 0.25rem 1rem;
+    margin: 0 0.5rem;
+    @media(max-width: 768px) {
+      display: block;
+    }
+    svg {
+      position: relative;
+      top: 0.25rem;
+      path {
+        fill: $color12;
+      }
+    }
+  }
+}
+

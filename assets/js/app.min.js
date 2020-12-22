@@ -1,0 +1,1 @@
+function nav(){var i=$("#navigation-trigger"),a=$("#navigation-items"),e=$("#navigation-items li a");sideBar=$("#sidebar"),i.on("click",function(){a.toggleClass("active"),sideBar.toggleClass("active")}),e.on("click",function(){a.removeClass("active"),sideBar.removeClass("active")})}nav();

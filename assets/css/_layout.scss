@@ -1,0 +1,34 @@
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0 1rem;
+  .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    @media(max-width: 768px) {
+      flex-wrap: wrap !important;
+      .col-25, .col-50, .col-75, .col-100 {
+        width: 100% !important;
+      }
+    }
+    .col-25, .col-50, .col-75, .col-100 {
+      margin: 0 0.5rem;
+    }
+    .col-100 {
+      width: 100%;
+    }
+    .col-75 {
+      width: 75%;
+    }
+    .col-50 {
+      width: 50%;
+    }
+    .col-25 {
+      width: 25%;
+    }
+  }
+  .center {
+    text-align: center;
+  }
+}
