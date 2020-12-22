@@ -15,7 +15,7 @@
                 <pre data-code="ruby" class="ruby">require 'net/http'
 require 'json'
 
-url = 'https://api.leakedpassword.com/pass/{your-password}'
+url = 'https://leakedpassword.com/api/?p={your-password}'
 uri = URI(url)
 response = Net::HTTP.get(uri)
 JSON.parse(response)</pre>
@@ -24,7 +24,7 @@ JSON.parse(response)</pre>
                 <pre data-code="ruby" class="ruby">require 'net/http'
 require 'json'
 
-url = 'https://api.leakedpassword.com/sha1/{your-sha1-hash}'
+url = 'https://leakedpassword.com/api/?s={your-sha1-hash}'
 uri = URI(url)
 response = Net::HTTP.get(uri)
 JSON.parse(response)</pre>

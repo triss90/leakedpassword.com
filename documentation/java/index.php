@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     System.out
-        .println(jsonGetRequest("https://api.leakedpassword.com/pass/{your-password}"));
+        .println(jsonGetRequest("https://leakedpassword.com/api/?p={your-password}"));
   }
 
   private static String streamToString(InputStream inputStream) {
@@ -57,7 +57,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     System.out
-        .println(jsonGetRequest("https://api.leakedpassword.com/sha1/{your-sha1-hash}"));
+        .println(jsonGetRequest("https://leakedpassword.com/api/?s={your-sha1-hash}"));
   }
 
   private static String streamToString(InputStream inputStream) {

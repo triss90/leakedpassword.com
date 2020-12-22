@@ -14,7 +14,7 @@
                 <h3>Password Request</h3>
                 <pre data-code="php" class="php">&#60;?php
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "https://api.leakedpassword.com/pass/{your-password}");
+    curl_setopt($curl, CURLOPT_URL, "https://leakedpassword.com/api/?p={your-password}");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($curl);
     curl_close($curl);
@@ -24,7 +24,7 @@
                 <h3>SHA1 Hash Request</h3>
                 <pre data-code="php" class="php">&#60;?php
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "https://api.leakedpassword.com/sha1/{your-sha1-hash}");
+    curl_setopt($curl, CURLOPT_URL, "https://leakedpassword.com/api/?s={your-sha1-hash}");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($curl);
     curl_close($curl);

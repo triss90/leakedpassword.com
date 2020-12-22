@@ -12,10 +12,10 @@
                 <h1>Shell Implementation</h1>
 
                 <h3>Password Request</h3>
-                <pre data-code="shell" class="shell">curl --location --request GET https://api.leakedpassword.com/pass/{your-password}</pre>
+                <pre data-code="shell" class="shell">curl --location --request GET https://leakedpassword.com/api/?p={your-password}</pre>
 
                 <h3>SHA1 Hash Request</h3>
-                <pre data-code="shell" class="shell">curl --location --request GET https://api.leakedpassword.com/sha1/{your-sha1-hash}</pre>
+                <pre data-code="shell" class="shell">curl --location --request GET https://leakedpassword.com/api/?s={your-sha1-hash}</pre>
 
                 <h3>Response</h3>
                 <pre data-code="json">{

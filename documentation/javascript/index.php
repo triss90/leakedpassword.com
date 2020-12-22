@@ -15,7 +15,7 @@
                 <pre data-code="javascript">function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://api.leakedpassword.com/pass/{your-password}', true);
+    xobj.open('GET', 'https://leakedpassword.com/api/?p={your-password}', true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
           callback(xobj.responseText);
@@ -35,7 +35,7 @@ init();</pre>
                 <pre data-code="javascript">function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://api.leakedpassword.com/sha1/{your-sha1-hash}', true);
+    xobj.open('GET', 'https://leakedpassword.com/api/?s={your-sha1-hash}', true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
           callback(xobj.responseText);

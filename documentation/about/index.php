@@ -14,7 +14,7 @@
                 <p>The API has been specifically designed to be easy to use! It requires no authentication, secret keys or anything else that would get in the way.</p>
                 <p>A sample usecase for the API, is testing, during the signup process, whether a user's password has previously been leaked, and take appropriate actions based on the result of the API query.</p>
                 <p>A sample test might look something like this:</p>
-                <pre data-code="javascript" class="javascript">$.getJSON("https://api.leakedpassword.com/pass/1234", function(data) {
+                <pre data-code="javascript" class="javascript">$.getJSON("https://leakedpassword.com/api/?p=1234", function(data) {
     if (data['password']['leak'] == true) {
         // Alert the user to leaked password
     } else {
