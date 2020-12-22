@@ -5,10 +5,10 @@ View the full documentation here: [leakedpassword.com/documentation](https://lea
 
 ## Using the API
 There are two basic ways of querying the API. You can send us the unecrypted password and let us sha1 hash it before retrieving the data:
-`https://api.leakedpassword.com/pass/{your-clear-text-password}`
+`https://leakedpassword.com/api/?p={your-clear-text-password}`
 
 Or you can hash the password before sending it to us. In theory this method should be faster, and obviously more secure:
-`https://api.leakedpassword.com/sha1/{your-sha1-hashed-password}`
+`https://leakedpassword.com/api/?s={your-sha1-hashed-password}`
 
 ### The response
 The typical successful response should look something like this:
