@@ -1,7 +1,7 @@
 <?php
 /*  API usage
-    https://api.leakedpassword.com/pass/{your-password}
-    https://api.leakedpassword.com/sha1/{your-sha1-hash}
+    https://leakedpassword.com/api/?p={your-password}
+    https://leakedpassword.com/api/?s={your-sha1-hash}
 */
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: charset=utf-8');
@@ -21,8 +21,8 @@ function is_sha1($str) {
 }
 
 // Get password and sha1 determine if hashed
-$sha1 = $_GET['sha1'];
-$submitted_password = $_GET['password'];
+$sha1 = $_GET['s'];
+$submitted_password = $_GET['p'];
 $hash = isset($sha1) && $sha1 == 1 ? $submitted_password : sha1($submitted_password);
 
 // Check if submitted password is valid hash
