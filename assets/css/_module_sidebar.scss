@@ -1,6 +1,8 @@
 aside#sidebar {
   width: 300px;
-  box-shadow: inset -9rem 0 9rem -9rem #000;
+  // box-shadow: inset -9rem 0 9rem -9rem #000;
+  // -moz-box-shadow: inset -9rem 0 9rem -9rem #000;
+  // -webkit-box-shadow: inset -9rem 0 9rem -9rem #000;
   border-right: 1px solid #29303d;
   position: fixed;
   top: 64px;
@@ -87,7 +89,17 @@ aside#sidebar {
     }
     &:hover {
       background-color: rgba(43,61,95,0.125);
+      
       box-shadow: inset -4.5rem 0 6.75rem -7rem $color5;
+      
+      /* Safari bug fix: negative inset box-shadow spread */
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          box-shadow: inset -4.5rem 0 6.75rem 0rem $color5;
+        }
+      }
+      /* Safari bug fix */
+      
       &:after {
         width: .25rem;
       }

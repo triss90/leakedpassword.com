@@ -1,9 +1,7 @@
 nav[aria-label='site'] {
   border-bottom: 1px solid $color1;
   background: $color3;
-  // box-shadow: 0 1rem 5rem -0.5rem $color5;
-  // -moz-box-shadow: 0 1rem 5rem -0.5rem $color5;
-  // -webkit-box-shadow: 0 1rem 5rem -0.5rem $color5;
+  box-shadow: 0 1rem 5rem -0.5rem $color5;
   height: 64px;
   line-height: 1.5;
   z-index: 10;
@@ -17,7 +15,6 @@ nav[aria-label='site'] {
     margin: 0 auto;
     padding: 0;
     height: 95%;
-    
   }
   a.logo {
     font-weight: bold;
