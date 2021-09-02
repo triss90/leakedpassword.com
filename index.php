@@ -34,7 +34,32 @@
         <div class="row">
             <div class="col-100 center">
                 <br<br><br>
-                <p style="color: #a6b0c3; font-size: 0.8rem;">Developer? Implement the <a href="/documentation">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
+                <style>
+                    .news h3 {
+                        font-size: 0.85rem;
+                        margin: 0;
+                    }
+                    .news-item a {
+                        font-size: 0.8rem;
+                        color: #a6b0c3;
+                        border-bottom-color: transparent;
+                    }
+                    .news-item a:hover {
+                        border-bottom-color: #ffcb36;
+                    }
+                </style>
+                <div class="news">
+                    <h3>Recent Breaches:</h3>
+                    <?php
+                        $content = file_get_contents("https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches?fmt=xml");
+                        $xml = new SimpleXMLElement($content);
+                        $limit = 0;
+                        foreach($xml->channel->item as $entry) {
+                            echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . $entry->title . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a></div>";                        
+                            if (++$limit == 5) break;
+                        }
+                    ?>
+                </div> 
             </div>
         </div>
     </div>
@@ -43,7 +68,7 @@
 <footer class="home">
     <p>Designed, built, and maintained by <a href="https://triss.dev" target="_blank">Tristan White</a>.</p>
     <p>Powered by <a href="https://haveibeenpwned.com" target="_blank">Have I Been Pwned</a>.</p>
-    <p>BTC: <a href="bitcoin:3F15Wh3nyhsnze5Gg5FkQXyDhWEr4bh8sH">3F15Wh3nyhsnze5Gg5FkQXyDhWEr4bh8sH</a></p>
+    <p>Developer? Implement the <a href="/documentation">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
 </footer>
 
 <?php include('_inc/footer.php'); ?>
