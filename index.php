@@ -44,18 +44,38 @@
                         color: #a6b0c3;
                         border-bottom-color: transparent;
                     }
+                    .news-item .pub-date {
+                        font-size: 0.8rem;
+                        color: #495263;
+                        border-bottom-color: transparent;
+                    }
                     .news-item a:hover {
                         border-bottom-color: #ffcb36;
                     }
                 </style>
                 <div class="news">
-                    <h3>Recent Breaches:</h3>
+                    <h3>Recently Published Breaches:</h3>
                     <?php
                         $content = file_get_contents("https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches?fmt=xml");
                         $xml = new SimpleXMLElement($content);
                         $limit = 0;
                         foreach($xml->channel->item as $entry) {
-                            echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . $entry->title . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a></div>";                        
+                            $number = strstr(explode('- ',$entry->title)[1], "breached", true);
+                            $number = (int)str_replace(',', '', $number);
+                            
+                            // echo "<pre style='text-align:left;'>";
+                            // var_dump($entry);
+                            // echo "</pre>";
+                            
+                            if ($number > 10000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#e31d65;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } elseif ($number > 5000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ff7c35;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } elseif ($number > 1000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ffcb36;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } else {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ffffff;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            }
                             if (++$limit == 5) break;
                         }
                     ?>
