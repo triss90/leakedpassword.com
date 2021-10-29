@@ -6,9 +6,21 @@
     <div class="content-inner">
         <div class="row">
             <div class="col-100 center">
+                <?php
+                    $content = file_get_contents("https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches?fmt=xml");
+                    $xml = new SimpleXMLElement($content);
+                    $limit = 0;
+                    $total = 0;
+                    foreach($xml->channel->item as $entry) {
+                        $number = strstr(explode('- ',$entry->title)[1], "breached", true);
+                        $number = (int)str_replace(',', '', $number);
+                        $total += $number;    
+                    }
+                ?>
                 <h1>Has your password been leaked?</h1>
-                <p>Password hacking compromised more than 150 million accounts this past year.<br>
+                <p>Password hacking compromised <span style="text-decoration:underline;">more than</span> <span style="background:#e31d65;"><?php echo number_format($total, 0, '.', ','); ?></span> accounts these past 6 months!<br>
                 Find out if a password hack has exposed your password to the world.</p>
+                
             </div>
         </div>
         <form action="check_password.php" method="post" class="check-password" id="check-password">
@@ -55,17 +67,10 @@
                 </style>
                 <div class="news">
                     <h3>Recently Published Breaches:</h3>
-                    <?php
-                        $content = file_get_contents("https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches?fmt=xml");
-                        $xml = new SimpleXMLElement($content);
-                        $limit = 0;
+                    <?php                       
                         foreach($xml->channel->item as $entry) {
                             $number = strstr(explode('- ',$entry->title)[1], "breached", true);
                             $number = (int)str_replace(',', '', $number);
-                            
-                            // echo "<pre style='text-align:left;'>";
-                            // var_dump($entry);
-                            // echo "</pre>";
                             
                             if ($number > 10000000) {
                                 echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#e31d65;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
