@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <?php include('_inc/header.php'); ?>
 <body id="home">
 <?php include('_inc/navigation.php'); ?>
@@ -6,9 +12,21 @@
     <div class="content-inner">
         <div class="row">
             <div class="col-100 center">
+                <?php
+                    $content = file_get_contents("https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches?fmt=xml");
+                    $xml = new SimpleXMLElement($content);
+                    $limit = 0;
+                    $total = 0;
+                    foreach($xml->channel->item as $entry) {
+                        $number = strstr(explode('- ',$entry->title)[1], "breached", true);
+                        $number = (int)str_replace(',', '', $number);
+                        $total += $number;    
+                    }
+                ?>
                 <h1>Has your password been leaked?</h1>
-                <p>Password hacking compromised more than 150 million accounts this past year.<br>
+                <p>Password hacking compromised <span style="text-decoration:underline;">more than</span> <span style="background:#e31d65;"><?php echo number_format($total, 0, '.', ','); ?></span> accounts these past 6 months!<br>
                 Find out if a password hack has exposed your password to the world.</p>
+                
             </div>
         </div>
         <form action="check_password.php" method="post" class="check-password" id="check-password">
@@ -34,7 +52,45 @@
         <div class="row">
             <div class="col-100 center">
                 <br<br><br>
-                <p style="color: #a6b0c3; font-size: 0.8rem;">Developer? Implement the <a href="/documentation">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
+                <style>
+                    .news h3 {
+                        font-size: 0.85rem;
+                        margin: 0;
+                    }
+                    .news-item a {
+                        font-size: 0.8rem;
+                        color: #a6b0c3;
+                        border-bottom-color: transparent;
+                    }
+                    .news-item .pub-date {
+                        font-size: 0.8rem;
+                        color: #495263;
+                        border-bottom-color: transparent;
+                    }
+                    .news-item a:hover {
+                        border-bottom-color: #ffcb36;
+                    }
+                </style>
+                <div class="news">
+                    <h3>Recently Published Breaches:</h3>
+                    <?php                       
+                        foreach($xml->channel->item as $entry) {
+                            $number = strstr(explode('- ',$entry->title)[1], "breached", true);
+                            $number = (int)str_replace(',', '', $number);
+                            
+                            if ($number > 10000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#e31d65;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } elseif ($number > 5000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ff7c35;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } elseif ($number > 1000000) {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ffcb36;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            } else {
+                                echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ffffff;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
+                            }
+                            if (++$limit == 5) break;
+                        }
+                    ?>
+                </div> 
             </div>
         </div>
     </div>
@@ -43,7 +99,7 @@
 <footer class="home">
     <p>Designed, built, and maintained by <a href="https://triss.dev" target="_blank">Tristan White</a>.</p>
     <p>Powered by <a href="https://haveibeenpwned.com" target="_blank">Have I Been Pwned</a>.</p>
-    <p>BTC: <a href="bitcoin:3F15Wh3nyhsnze5Gg5FkQXyDhWEr4bh8sH">3F15Wh3nyhsnze5Gg5FkQXyDhWEr4bh8sH</a></p>
+    <p>Developer? Implement the <a href="/documentation">API</a> in your user sign-up process, <br>to add an extra layer of validation and security.</p>
 </footer>
 
 <?php include('_inc/footer.php'); ?>
