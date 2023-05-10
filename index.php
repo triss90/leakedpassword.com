@@ -87,7 +87,7 @@ error_reporting(E_ALL);
                             } else {
                                 echo "<div class='news-item'><a href='$entry->link' title='$entry->title'>" . strstr($entry->title, " -", true). " - <span style='color:#ffffff;'>".number_format($number)."</span> b" . explode(' b',$entry->title)[1] . " " . preg_replace('/^([^,]*).*$/', '$1', $entry->description) . "</a> <span class='pub-date'> (Published: ". $entry->pubDate.")</span></div>";
                             }
-                            if (++$limit == 5) break;
+                            if (++$limit == 10) break;
                         }
                     ?>
                 </div> 
